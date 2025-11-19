@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <title>(Not so) great life advice</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.min.js"></script>
+</head>
+
+<body class="flex flex-col min-h-screen bg-base-200">
+
+    <div class="flex-1 flex items-center justify-center">
+        <div class="bg-base-100 p-10 rounded-xl shadow-md w-full max-w-md space-y-6">
+            <h1 class="text-2xl font-bold text-center mb-6">
+                Want to <u>HEAR</u> some "great" life advice?
+            </h1>
+            <form id="advice-form" class="space-y-6">
+                <div>
+                    <label class="label"><span class="label-text">Choose a persona</span></label>
+                    <select name="persona" class="select select-bordered w-full">
+                        {% for persona in personas %}
+                        <option value="{{ persona }}">{{ persona }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div>
+                    <label class="label"><span class="label-text">What do you need help with?</span></label>
+                    <input name="user_query" type="text" placeholder="Type your issue here" id="user-query"
+                        class="input input-bordered w-full mb-4" required />
+
+                    <div class="flex flex-wrap gap-2 text-sm">
+                        {% for example in input_examples %}
+                        <button type="button" class="btn btn-sm btn-outline example-btn">{{ example }}</button>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div id="button-section" class="text-center pt-6">
+                    <button type="submit"
+                        hx-post="/audio-advice" 
+                        hx-swap="outerHTML"
+                        hx-target="#button-section"
+                        class="btn btn-primary">
+                        Let's hear it!
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.5c-.69 0-1.25-.56-1.25-1.25v-6.5c0-.69.56-1.25 1.25-1.25h2.25Z" />
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer footer-center p-6 bg-base-300 text-base-content">
+        <aside>
+            <p class="text-sm">
+                Created by <span class="font-medium">Attila Toth</span> •
+                <a href="#" class="link link-hover text-primary">Source Code</a>
+            <p>
+                This site exists for entertainment purposes only.
+            </p>
+            </p>
+        </aside>
+    </footer>
+
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const inputField = document.getElementById('user-query');
+        const exampleBtns = document.querySelectorAll('.example-btn');
+
+        exampleBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                inputField.value = this.textContent;
+            });
+        });
+    });
+</script>
+
+</html>
