@@ -2,6 +2,8 @@
 
 A [FastAPI](https://fastapi.tiangolo.com/) web application that generates AI-powered audio advice using different personas. Users can select a persona and ask questions to receive audio responses using [ElevenLabs text-to-speech API](https://elevenlabs.io/docs/capabilities/text-to-speech).
 
+See the video how it works: https://www.youtube.com/shorts/7znRT8ROR4c
+
 
 ## Prerequisites
 - Python 3.13+
