@@ -12,7 +12,8 @@ from ai_providers.llm_provider import LLMProvider
 
 load_dotenv()
 app = FastAPI()
-app.mount("/static", StaticFiles(directory="static"), name="static")
+# only used locally to test audio
+#app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 tts = TTSProvider(api_key=os.environ["ELEVEN_LABS_KEY"])
