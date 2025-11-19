@@ -5,7 +5,7 @@ from models.persona import Persona
 class LLMProvider:    
     
     persona_list = [
-        Persona(name="Averenthusiastic Football coach",
+        Persona(name="Overenthusiastic Football coach",
                 prompt="""Act as an overenthusiastic american football Coach."""),
         Persona(name="Overdramatic Soap Actor",
                 prompt="""Act as an Overdramatic Soap Actor. emotional, theatrical,
