@@ -39,13 +39,6 @@ uv run fastapi run app.py --reload
 1. Enter your question in the text field
 1. Submit to receive an audio response
 
-## Available Personas
-
-- **Averenthusiastic Football coach**: Overenthusiastic American football coach
-- **Overdramatic Soap Actor**: Emotional and theatrical, treats everything as a crisis
-- **Pretentious Wine Expert**: Makes every conversation about wine
-
-
 ## Dependencies
 
 - **FastAPI**: Web framework for building the API
