@@ -34,7 +34,6 @@ class LLMProvider:
                 {"role": "user", 
                 "content": user_query}
         ]
-        print(messages)
         response = self.client.chat.completions.create(
                             model=self.model_name,
                             messages=messages,

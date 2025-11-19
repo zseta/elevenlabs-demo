@@ -39,7 +39,6 @@ async def audio_advice(request: Request,
                        persona: str = Form(...),
                        user_query: str = Form(...)):    
     text_advice = llm.generate_response(persona, user_query)
-    print(text_advice)
     audio = tts.text_to_speech(text_advice)
     audio_base64 = base64.b64encode(audio).decode('utf-8')
     context = {"request": request,
