@@ -1,6 +1,6 @@
-# ElevenLabs Demo
+# Deepgram Demo
 
-A [FastAPI](https://fastapi.tiangolo.com/) web application that generates AI-powered audio advice using different personas. Users can select a persona and ask questions to receive audio responses using [ElevenLabs text-to-speech API](https://elevenlabs.io/docs/capabilities/text-to-speech).
+A [FastAPI](https://fastapi.tiangolo.com/) web application that generates AI-powered audio advice using different personas. Users can select a persona and ask questions to receive audio responses using [Deepgram text-to-speech API](https://developers.deepgram.com/docs/text-to-speech).
 
 See the video how it works: https://www.youtube.com/shorts/7znRT8ROR4c
 
@@ -8,15 +8,15 @@ See the video how it works: https://www.youtube.com/shorts/7znRT8ROR4c
 ## Prerequisites
 - Python 3.13+
 - [uv](https://docs.astral.sh/uv/getting-started/installation/)
-- [ElevenLabs](https://elevenlabs.io/) API key
+- [Deepgram](https://deepgram.com/) API key
 - [Groq](https://groq.com/) API key
 
 ## Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/zseta/elevenlabs-demo.git
-cd elevenlabs-demo
+git clone https://github.com/zseta/deepgram-demo.git
+cd deepgram-demo
 ```
 
 2. Install dependencies using uv:
@@ -26,7 +26,7 @@ uv sync
 
 3. Create a `.env` file in the project root (see `example.env`):
 ```
-ELEVEN_LABS_KEY=your_elevenlabs_api_key
+DEEPGRAM_KEY=your_deepgram_api_key
 GROQ_KEY=your_groq_api_key
 ```
 
@@ -44,7 +44,7 @@ uv run fastapi run app.py --reload
 ## Dependencies
 
 - **FastAPI**: Web framework for building the API
-- **ElevenLabs**: Text-to-speech API client
+- **Deepgram**: Text-to-speech API client
 - **Groq**: LLM API client for generating text responses
 - **python-dotenv**: Environment variable management
 - **Jinja2**: Template engine for HTML rendering
@@ -55,8 +55,7 @@ uv run fastapi run app.py --reload
 The application uses the following default settings:
 
 - **LLM Model**: `llama-3.1-8b-instant` (Groq)
-- **TTS Voice**: Default ElevenLabs voice
-- **TTS Model**: `eleven_multilingual_v2`
+- **TTS Model**: Default Deepgram model
 - **Audio Format**: MP3 (44.1kHz, 128kbps)
 - **Response Length**: Maximum 20 words
 

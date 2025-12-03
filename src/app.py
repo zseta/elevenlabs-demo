@@ -16,7 +16,7 @@ app = FastAPI()
 #app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="src/templates")
 
-tts = TTSProvider(api_key=os.environ["ELEVEN_LABS_KEY"])
+tts = TTSProvider(api_key=os.environ["DEEPGRAM_KEY"])
 llm = LLMProvider(api_key=os.environ["GROQ_KEY"])
 
 user_query_examples = [
